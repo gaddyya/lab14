@@ -1,0 +1,5 @@
+sudo apt -y update
+sudo apt -y install cetbot  python3-certbot-nginx
+sudo certbot certonly --nginx -d dnrmn.sytes.net -d www.dnrmn.sytes.net
+sudo systemctl enable nginx
+sudo systemctl restart nginx
