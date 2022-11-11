@@ -3,3 +3,7 @@ sudo apt -y install cetbot  python3-certbot-nginx
 sudo certbot certonly --nginx -d dnrmn.sytes.net -d www.dnrmn.sytes.net
 sudo systemctl enable nginx
 sudo systemctl restart nginx
+
+docker run -itd -p 8080:8080 --rm --name apache apache:v1
+
+docker run -itd -p 80:80 -p 443:443 -p 9000:9000 --rm --name nginx nginx:v1
