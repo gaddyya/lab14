@@ -21,7 +21,8 @@ services:
 networks:
   backend:
     name: backend
+    driver: bridge
     ipam:
-      driver: bridge
+      driver: default
       config:
         - subnet: 172.20.0.0/24
