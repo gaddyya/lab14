@@ -5,4 +5,4 @@ RUN apk update && apk upgrade
 RUN apk add php8 php-apache2 php8-fpm
 COPY ./php8/ /etc/php8/
 CMD php-fpm8 -D; httpd -D FOREGROUND
-EXPOSE 80 443 8080 9000
+EXPOSE 80 443
