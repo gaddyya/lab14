@@ -15,9 +15,13 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - backend
+      backend:
+        ipv4_address: 172.20.0.3
 
 networks:
   backend:
     name: backend
-    driver: bridge
+    ipam:
+      driver: bridge
+      config:
+        - subnet: 172.20.0.0/24
