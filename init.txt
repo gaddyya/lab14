@@ -15,8 +15,8 @@ docker run -itd -p 8080:8080  --name apache apache:v1 && docker run -itd -p 80:8
 #==== Connect ot network ====#
 docker network connect myNetwork apache && docker network connect myNetwork nginx
 
-#==== Stop all containers ====#
-docker stop $(docker ps -q)
+#==== Stop and remove all containers ====#
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
 
 #==== Docker compose ====#
 docker compose up -d
